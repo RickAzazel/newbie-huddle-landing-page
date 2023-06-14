@@ -1,29 +1,40 @@
-*, ::after, ::before {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+*,
+::after,
+::before {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	font-family: 'Open Sans', sans-serif;
 }
 
 :root {
 	/** ================= Colors =================== */
 	/* Background */
-	--main-bg-color: 	rgb(103, 75, 175);
+	--main-bg-color: rgb(103, 75, 175);
 	--btn-bg-color: white;
-	--btn-bg-color--hover: 	rgb(232, 130, 232);
-	--icon-bg-color: 	rgb(103, 75, 175);
-	--icon-color: 	white;
-	--icon-color--hover: rgb(232, 130, 232);
-	
-	/* Border */
-	--icon-border-color: white;
-	--icon-border-color--hover: rgb(232, 130, 232);
+	--btn-bg-color--hover: rgb(232, 130, 232);
+	--icon-bg-color: rgb(103, 75, 175);
 
 	/* Font */
-	--title-font-color: 	white;
+	--title-font-color: white;
 	--text-font-color: rgb(222, 209, 222);
 	--btn-font-color: rgb(103, 75, 175);
 	--btn-font-color--hover: rgb(222, 209, 222);
 
+	/* Border */
+	--icon-border-color: white;
+	--icon-border-color--hover: rgb(232, 130, 232);
+
+	/* Shadow */
+	--btn-shadow-color: rgba(0, 0, 0, 0.469);
+
+	/* Icons */
+	--icon-color: white;
+	--icon-color--hover: rgb(232, 130, 232);
+
+	/** ================= Size =================== */
 	/* Icon size */
 	--icon-size-xl: 20px;
 	--icon-size-l: 15px;
@@ -40,7 +51,6 @@ html {
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
 	font-size: 1.6rem;
 }
 
@@ -51,7 +61,7 @@ body {
 	background: url('./images/bg-desktop.svg') 0 0/ 95% 100% no-repeat;
 	background-color: var(--main-bg-color);
 	width: 100%;
-	height: 100vh;
+	min-height: 100%;
 }
 
 .container {
@@ -75,7 +85,6 @@ body {
 /** ================= Content =================== */
 .landing-page__content {
 	display: flex;
-
 }
 
 .landing-page__picture,
@@ -120,7 +129,7 @@ body {
 	border: none;
 	background: var(--btn-bg-color);
 	color: var(--btn-font-color);
-	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.469);
+	box-shadow: 0px 0px 15px 0px var(--btn-shadow-color);
 	transition: all .5s;
 }
 
@@ -180,7 +189,7 @@ body {
 	transition: all .5s;
 }
 
-.footer__icons-item:hover > .footer__icons-link svg {
+.footer__icons-item:hover>.footer__icons-link svg {
 	fill: var(--icon-color--hover);
 }
 
@@ -261,11 +270,13 @@ body {
 		padding: 50px 0;
 	}
 }
+
 /* Mobile */
 @media (max-width: 480px) {
 	html {
 		font-size: 60%;
 	}
+
 	.wrapper {
 		background-image: url('./images/bg-mobile.svg');
 		background-size: contain;
@@ -276,8 +287,8 @@ body {
 	}
 
 	.header {
-		padding-top: 30px;
-		padding-bottom: 60px;
+		padding: 30px 0;
+		height: 90px;
 	}
 
 	.logo__img {
